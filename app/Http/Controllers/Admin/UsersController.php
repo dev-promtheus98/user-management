@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Http\Request;
 use MercurySeries\Flashy\Flashy;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Gate;
 
 class UsersController extends Controller
 {
@@ -68,6 +69,11 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
+        if (Gate::denies('edit-users')) {
+            Flashy::error('Vous n\'avez pas le droit d\'éffectuer cette action');
+            return redirect()->route('admin.users.index');
+        }
+
         $roles = Role::all();
         return view('admin.users.edit', [
             'user' => $user,
@@ -98,6 +104,11 @@ class UsersController extends Controller
      */
     public function destroy(User $user)
     {
+        if (Gate::denies('edit-users')) {
+            Flashy::error('Vous n\'avez pas le droit d\'éffectuer cette action');
+            return redirect()->route('admin.users.index');
+        }
+
         $user->roles()->detach();
         $user->delete();
         Flashy::success('Suppression éffectuée avec succès');
