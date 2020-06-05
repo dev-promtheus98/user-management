@@ -77,5 +77,8 @@
             @yield('content')
         </main>
     </div>
+
+    <script src="//code.jquery.com/jquery.js"></script>
+    @include('flashy::message')
 </body>
 </html>
