@@ -19,8 +19,4 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 - [Robust background job processing](https://laravel.com/docs/queues).
 - [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-<<<<<<< HEAD
-Laravel is accessible, powerful, and provides tool required for large, robust and big applications.
-=======
-Laravel is accessible, powerful, and provides tool required for large, robust and best application.
->>>>>>> 3d8623f74a7ece675ca96ca4ef57dc08812ad301
+Laravel is accessible, powerful, and provides tool required for large, robust big and best applications.
